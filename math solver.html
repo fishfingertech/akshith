@@ -38,25 +38,12 @@
   <div id="mathAnswer"></div>
 
   <script>
-    const input = document.getElementById('mathInput');
-    const answerDisplay = document.getElementById('mathAnswer');
-
-    input.addEventListener('keyup', function(event) {
+    document.getElementById('mathInput').addEventListener('keyup', function(event) {
       if (event.key === 'Enter') {
-        const userInput = input.value;
-        // Placeholder logic - Replace this with your actual math solving logic
-        // For example, evaluate the math expression and display the result
-        const answer = evaluate math(userInput);
-        answerDisplay.textContent = `Answer: ${answer}`;
+        const userInput = document.getElementById('mathInput').value;
+        document.getElementById('mathAnswer').innerText = `Answer: ${userInput}`;
       }
     });
-
-    // Placeholder function for math evaluation
-    function evaluateMath(input) {
-      // In a real system, this function would compute the answer based on the user input
-      // Here, just returning the input as an example
-      return input;
-    }
   </script>
 </body>
 
