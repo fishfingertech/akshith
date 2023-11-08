@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Akshith Search Engine</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 8px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Akshith Search Engine</h1>
+
+  <form id="searchForm" onsubmit="searchGoogle(); return false;">
+    <input type="text" id="searchQuery" placeholder="Type your search and press Enter">
+  </form>
+
+  <script>
+    function searchGoogle() {
+      const query = document.getElementById('searchQuery').value;
+      const searchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      window.open(searchURL, '_blank');
+    }
+  </script>
+</body>
+
+</html>
