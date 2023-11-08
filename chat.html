@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      background-color: #fff;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .user-message {
+      text-align: right;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 70px);
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      width: 60px;
+      padding: 8px;
+      font-size: 1em;
+      background-color: #337ab7;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chat-container" id="chatContainer">
+    <div class="message">Welcome! Ask me anything.</div>
+  </div>
+
+  <div class="user-message" id="userMessage" style="display: none;"></div>
+  <div class="message" id="aiResponse" style="display: none;"></div>
+
+  <div style="text-align: center;">
+    <form onsubmit="sendMessage(); return false;">
+      <input type="text" id="questionInput" placeholder="Type your question...">
+      <input type="submit" value="Send">
+    </form>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const question = document.getElementById('questionInput').value;
+      document.getElementById('userMessage').textContent = question;
+      document.getElementById('userMessage').style.display = 'block';
+
+      const response = getAIResponse(question);
+      document.getElementById('aiResponse').textContent = response;
+      document.getElementById('aiResponse').style.display = 'block';
+      
+      // Append the messages to the chat container
+      const chatContainer = document.getElementById('chatContainer');
+      chatContainer.innerHTML += `<div class="message user-message">${question}</div>`;
+      chatContainer.innerHTML += `<div class="message">${response}</div>`;
+
+      // Clear the input field after sending the message
+      document.getElementById('questionInput').value = '';
+    }
+
+    function getAIResponse(question) {
+      // Simulated AI response (Replace with your AI logic/API call)
+      return "AI: This is a simulated AI response for question: '" + question + "'";
+    }
+  </script>
+</body>
+
+</html>
