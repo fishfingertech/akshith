@@ -2,48 +2,62 @@
 <html>
 
 <head>
-  <title>About - Akshith Gula</title>
+  <title>Math Solver</title>
   <style>
     body {
-      background-color: #add8e6; /* Light blue background color */
       text-align: center;
-      padding-top: 50px; /* Adding space at the top for the ribbon */
+      padding-top: 50px;
     }
 
-    .container {
-      padding-top: 50px; /* Adding space at the top for the ribbon */
-      text-align: center;
-    }
-
-    .names {
-      font-size: 24px; /* Larger font for names */
-      text-align: center;
+    h1 {
+      font-size: 2em; /* Larger font for the heading */
     }
 
     .description {
-      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #mathInput {
+      width: 300px;
+      padding: 8px;
+      font-size: 1em;
+    }
+
+    #mathAnswer {
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
-  <div class="ribbon">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contacts.html">Contacts</a>
-    <a href="products.html">Products</a>
-    <a href="chat.html">ChatAi</a>
-  </div>
-  <div class="container">
-    <div class="names">
-      <p>Akshith Gula</p>
-      <p>Frank Jones</p>
-    </div>
-    <div class="description">
-      <p>13-year-old student studying MYP3 at ISE.</p>
-      <p>Akshith Gula's Assistant</p>
-    </div>
-  </div>
+  <h1>Math Solver</h1>
+  <p class="description">Excellent Math solver for any kind of equations!</p>
+
+  <input type="text" id="mathInput" placeholder="Type your math question here and press Enter">
+  <div id="mathAnswer"></div>
+
+  <script>
+    const input = document.getElementById('mathInput');
+    const answerDisplay = document.getElementById('mathAnswer');
+
+    input.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        const userInput = input.value;
+        // Placeholder logic - Replace this with your actual math solving logic
+        // For example, evaluate the math expression and display the result
+        const answer = evaluate math(userInput);
+        answerDisplay.textContent = `Answer: ${answer}`;
+      }
+    });
+
+    // Placeholder function for math evaluation
+    function evaluateMath(input) {
+      // In a real system, this function would compute the answer based on the user input
+      // Here, just returning the input as an example
+      return input;
+    }
+  </script>
 </body>
 
 </html>
