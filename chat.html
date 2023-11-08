@@ -50,6 +50,17 @@
       border-radius: 5px;
       text-decoration: none;
     }
+
+    .bottom-text {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Beluvia', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #000;
+    }
   </style>
 </head>
 
@@ -64,6 +75,8 @@
   <p id="answer" style="display: none;"></p>
 
   <a href="https://akshith.vercel.app/" class="home-button">Home</a>
+
+  <p class="bottom-text">Multiplication still in production</p>
 
   <script>
     function solveMath() {
