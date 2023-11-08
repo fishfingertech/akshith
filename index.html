@@ -8,6 +8,8 @@
       background-color: #add8e6; /* Light blue background color */
       text-align: center;
       padding-top: 50px; /* Adding space at the top for the ribbon */
+      font-family: 'Beluvia', sans-serif;
+      font-weight: 600; /* Semi bold */
     }
 
     h1 {
@@ -31,8 +33,14 @@
       margin: 0 10px;
     }
 
-    p {
-      display: none; /* Removing the paragraph */
+    .change-color-button {
+      font-size: 2em; /* Larger font size for the button */
+      font-family: 'Beluvia', sans-serif;
+      font-weight: 600; /* Semi bold */
+      padding: 10px 20px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -45,6 +53,29 @@
     <a href="chat.html">ChatAi</a>
   </div>
   <h1>Akshith Gula</h1>
+
+  <button class="change-color-button" onclick="changeColor()">Change Color</button>
+
+  <script>
+    const colors = [
+      '#add8e6', /* Light blue */
+      '#00008b', /* Dark blue */
+      'green',
+      'red',
+      'yellow',
+      'orange',
+      'pink',
+      'purple',
+      'white',
+      'black'
+    ];
+    let currentColorIndex = 0;
+
+    function changeColor() {
+      document.body.style.backgroundColor = colors[currentColorIndex];
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+  </script>
 </body>
 
 </html>
