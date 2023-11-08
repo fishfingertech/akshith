@@ -42,6 +42,10 @@
       border-radius: 5px;
       margin-top: 50px;
     }
+
+    input[type="text"] {
+      display: none; /* Hide the input by default */
+    }
   </style>
 </head>
 
@@ -55,6 +59,10 @@
   <h1>Akshith Gula</h1>
 
   <button class="change-color-button" onclick="changeColor()">Change Color</button>
+
+  <form onsubmit="return false">
+    <input type="text" id="triggerChangeColor" onkeydown="handleKeyPress(event)">
+  </form>
 
   <script>
     const colors = [
@@ -74,6 +82,12 @@
     function changeColor() {
       document.body.style.backgroundColor = colors[currentColorIndex];
       currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        document.querySelector('.change-color-button').click();
+      }
     }
   </script>
 </body>
