@@ -2,23 +2,23 @@
 <html>
 
 <head>
-  <title>Akshith Gula</title>
+  <title>Chatbot Website</title>
   <style>
     body {
-      background-color: #add8e6; /* Light blue background color */
+      background-color: #add8e6;
       text-align: center;
-      padding-top: 50px; /* Adding space at the top for the ribbon */
+      padding-top: 50px;
       font-family: 'Beluvia', sans-serif;
-      font-weight: 600; /* Semi bold */
+      font-weight: 600;
     }
 
     h1 {
-      margin-top: 30px; /* Adjusting space below the title */
+      margin-top: 30px;
     }
 
     .ribbon {
-      background-color: #333; /* Background color for the ribbon */
-      color: #fff; /* Text color for the ribbon */
+      background-color: #333;
+      color: #fff;
       width: 100%;
       position: fixed;
       top: 0;
@@ -28,23 +28,19 @@
     }
 
     .ribbon a {
-      color: #fff; /* Text color for the ribbon buttons */
+      color: #fff;
       text-decoration: none;
       margin: 0 10px;
     }
 
     .change-color-button {
-      font-size: 2em; /* Larger font size for the button */
+      font-size: 2em;
       font-family: 'Beluvia', sans-serif;
-      font-weight: 600; /* Semi bold */
+      font-weight: 600;
       padding: 10px 20px;
       border: 2px solid #000;
       border-radius: 5px;
       margin-top: 50px;
-    }
-
-    input[type="text"] {
-      display: none; /* Hide the input by default */
     }
   </style>
 </head>
@@ -55,19 +51,16 @@
     <a href="about.html">Entertainment</a>
     <a href="contacts.html">Search Engine</a>
     <a href="chat.html">Calculator</a>
+    <a href="chinni.html">Chinni's</a>
   </div>
   <h1>Akshith Gula</h1>
 
   <button class="change-color-button" onclick="changeColor()">Change Color</button>
 
-  <form onsubmit="return false">
-    <input type="text" id="triggerChangeColor" onkeydown="handleKeyPress(event)">
-  </form>
-
   <script>
     const colors = [
-      '#add8e6', /* Light blue */
-      '#00008b', /* Dark blue */
+      '#add8e6',
+      '#00008b',
       'green',
       'red',
       'yellow',
@@ -82,12 +75,6 @@
     function changeColor() {
       document.body.style.backgroundColor = colors[currentColorIndex];
       currentColorIndex = (currentColorIndex + 1) % colors.length;
-    }
-
-    function handleKeyPress(event) {
-      if (event.key === 'Enter') {
-        document.querySelector('.change-color-button').click();
-      }
     }
   </script>
 </body>
