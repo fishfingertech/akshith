@@ -76,7 +76,7 @@
 
   <a href="https://akshith.vercel.app/" class="home-button">Home</a>
 
-  <p class="bottom-text">Use this for multiplication:  *</p>
+  <p class="bottom-text">Use '*' for multiplication and '^' for exponentiation (e.g., 7*2, 7^3)</p>
 
   <script>
     function solveMath() {
@@ -84,6 +84,9 @@
       var answer;
 
       try {
+        // Replace 'x' with '*' and '^' with '**' for proper evaluation
+        mathQuestion = mathQuestion.replace(/x/g, '*').replace(/\^/g, '**');
+
         answer = eval(mathQuestion); // Evaluates the mathematical expression
         if (isNaN(answer) || answer === undefined) {
           throw new Error('Invalid input or calculation');
